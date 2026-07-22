@@ -1,0 +1,208 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+  <world name="hospital_human_world">
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <gravity>0 0 -9.8</gravity>
+
+    <!-- TurtleBot3 directly inside world -->
+    <include>
+      <uri>model://turtlebot3_waffle_pi</uri>
+      <pose>-6 0 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Big floor -->
+    <model name="big_floor">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="floor_link">
+        <collision name="floor_collision">
+          <geometry>
+            <box>
+              <size>22 22 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="floor_visual">
+          <geometry>
+            <box>
+              <size>22 22 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.70 0.70 0.70 1</ambient>
+            <diffuse>0.70 0.70 0.70 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Boundary walls -->
+    <model name="large_square_walls">
+      <static>true</static>
+      <link name="walls_link">
+
+        <collision name="north_wall_collision">
+          <pose>0 11 1.25 0 0 0</pose>
+          <geometry><box><size>22 0.25 2.5</size></box></geometry>
+        </collision>
+        <visual name="north_wall_visual">
+          <pose>0 11 1.25 0 0 0</pose>
+          <geometry><box><size>22 0.25 2.5</size></box></geometry>
+          <material><ambient>0.85 0.85 0.85 1</ambient><diffuse>0.85 0.85 0.85 1</diffuse></material>
+        </visual>
+
+        <collision name="south_wall_collision">
+          <pose>0 -11 1.25 0 0 0</pose>
+          <geometry><box><size>22 0.25 2.5</size></box></geometry>
+        </collision>
+        <visual name="south_wall_visual">
+          <pose>0 -11 1.25 0 0 0</pose>
+          <geometry><box><size>22 0.25 2.5</size></box></geometry>
+          <material><ambient>0.85 0.85 0.85 1</ambient><diffuse>0.85 0.85 0.85 1</diffuse></material>
+        </visual>
+
+        <collision name="east_wall_collision">
+          <pose>11 0 1.25 0 0 0</pose>
+          <geometry><box><size>0.25 22 2.5</size></box></geometry>
+        </collision>
+        <visual name="east_wall_visual">
+          <pose>11 0 1.25 0 0 0</pose>
+          <geometry><box><size>0.25 22 2.5</size></box></geometry>
+          <material><ambient>0.85 0.85 0.85 1</ambient><diffuse>0.85 0.85 0.85 1</diffuse></material>
+        </visual>
+
+        <collision name="west_wall_collision">
+          <pose>-11 0 1.25 0 0 0</pose>
+          <geometry><box><size>0.25 22 2.5</size></box></geometry>
+        </collision>
+        <visual name="west_wall_visual">
+          <pose>-11 0 1.25 0 0 0</pose>
+          <geometry><box><size>0.25 22 2.5</size></box></geometry>
+          <material><ambient>0.85 0.85 0.85 1</ambient><diffuse>0.85 0.85 0.85 1</diffuse></material>
+        </visual>
+
+      </link>
+    </model>
+
+    <!-- Standing Human 1 -->
+    <actor name="standing_person_1">
+      <pose>3.0 0.0 0.0 0 0 3.14</pose>
+      <skin>
+        <filename>/usr/share/gazebo-11/media/models/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <script>
+        <loop>true</loop>
+        <delay_start>0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="standing">
+          <waypoint>
+            <time>0</time>
+            <pose>3.0 0.0 0.0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>10</time>
+            <pose>3.0 0.0 0.0 0 0 3.14</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Standing Human 2 -->
+    <actor name="standing_person_2">
+      <pose>4.5 1.8 0.0 0 0 3.14</pose>
+      <skin>
+        <filename>/usr/share/gazebo-11/media/models/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <script>
+        <loop>true</loop>
+        <delay_start>0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="1" type="standing">
+          <waypoint>
+            <time>0</time>
+            <pose>4.5 1.8 0.0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>10</time>
+            <pose>4.5 1.8 0.0 0 0 3.14</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Walking Human 1 -->
+    <actor name="walking_person_1">
+      <pose>-4.0 -2.5 0.0 0 0 0</pose>
+      <skin>
+        <filename>/usr/share/gazebo-11/media/models/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>/usr/share/gazebo-11/media/models/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="2" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-4.0 -2.5 0.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>25</time>
+            <pose>4.0 -2.5 0.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>50</time>
+            <pose>-4.0 -2.5 0.0 0 0 3.14</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Walking Human 2 -->
+    <actor name="walking_person_2">
+      <pose>-4.0 2.5 0.0 0 0 0</pose>
+      <skin>
+        <filename>/usr/share/gazebo-11/media/models/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>/usr/share/gazebo-11/media/models/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>2</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="3" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-4.0 2.5 0.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>30</time>
+            <pose>4.0 2.5 0.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>60</time>
+            <pose>-4.0 2.5 0.0 0 0 3.14</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+  </world>
+
+</sdf>
