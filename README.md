@@ -410,25 +410,24 @@ The following screenshots demonstrate the functionality of the project.
 
 ## Gazebo Simulation
 
-> *(Insert a screenshot of the Gazebo simulation here.)*
+![Gazebo Simulation](gazebo_simulation.png)
 
 ---
 
 ## Human Detection
 
-> *(Insert a screenshot showing YOLOv8 detecting a person.)*
+![Human Detection](human_detection.png)
 
 ---
 
 ## Target Lock
 
-> *(Insert a screenshot showing the robot following the locked target.)*
-
+<img src="target_following.png" width="500">
 ---
 
 ## TurtleBot3 Hardware Validation
 
-> *(Insert a photo of the TurtleBot3 Waffle Pi during hardware testing.)*
+![Hardware Validation](hardware_validation.jpeg)
 
 ---
 
