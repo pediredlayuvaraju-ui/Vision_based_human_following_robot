@@ -403,7 +403,15 @@ The developed system successfully demonstrated:
 
 The robot consistently followed the selected target in both simulated and hardware environments.
 ---
+## 🎥 Project Demonstration
 
+Watch the complete demonstration of the **Vision-Based Human Following Robot** in action.
+
+▶️ **YouTube Demo:** https://youtube.com/shorts/ljdsln1_0JI
+
+[![Watch the Demo](gazebo_simulation.png)](https://youtube.com/shorts/ljdsln1_0JI)
+
+---
 # Screenshots
 
 The following screenshots demonstrate the functionality of the project.
