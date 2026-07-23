@@ -500,14 +500,13 @@ This project is released under the **MIT License**.
 
 ---
 
-# Author
+# Authors
 
-**Yuvraju Pediredla**
-
-M.Sc. Robotics Engineering
-
-ROS Case Study Project
-
+- **Yuvaraju Pediredla** – *M.Eng. Robotics*
+- **Govada Durga** – *M.Eng. Robotics*
+- **Uday Muvva** – *M.Eng. Robotics*
+- **Kailas Sunil** – *M.Eng. Robotics*
+  
 ---
 
 # Acknowledgements
