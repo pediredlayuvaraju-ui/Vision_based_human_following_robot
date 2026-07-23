@@ -504,7 +504,7 @@ This project is released under the **MIT License**.
 
 - **Yuvaraju Pediredla** – *M.Eng. Robotics*
 - **Govada Durga** – *M.Eng. Robotics*
-- **Uday Muvva** – *M.Eng. Robotics*
+- **Uday Bhanu Muvva** – *M.Eng. Robotics*
 - **Kailas Sunil** – *M.Eng. Robotics*
   
 ---
